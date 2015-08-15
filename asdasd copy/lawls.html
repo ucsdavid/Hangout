@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--COGS187A Sample Site-->
+<html>
+	<head>
+		<title>HANGOUT</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+		
+		<!-- Header -->
+			<div id="header-wrapper">
+			<div id="header" class="container">
+
+			<!-- Logo -->
+               <h1 id="logo" class="main-header" role="banner">
+                    <img src="/Pictures/Logo.jpg" alt="Banner Image"/ style="height: 100px; width: 100%;  ">
+                    <img src="Pictures/hands.jpg" alt="Banner Image"/ style="height: 100px; width: 100px; ">
+                   <!--<a href="index.html">Hangout</a></h1>
+                
+ 
+
+
+                
+                
+			<!-- Navigation Bar -->
+				<nav id="nav">
+					<ul>
+						<li>
+							<a href="#">Find A Group</a>
+								<ul>
+									<li><a href="#"></a></li>
+									<li><a href="#"></a></li>
+									<li><a href="#"></a></li>
+									<li>
+								</ul>
+						</li>
+					
+									<li><a href="AU.html">About us</a></li>
+									<li class="break"><a href="map.html">Map</a></li>
+									<li><a href="LIG.html">List of Groups</a></li>
+					</ul>
+				</nav>
+
+			</div>
+            <!-- Body, where majority of the information will be going --> 
+                <div id="wrap">
+                    <div id="header"><h1>Delete this Maybe</h1></div>
+                    <!-- Possible Remove -->    
+                    <div id="nav">
+                            <ul>
+                                <li><a href="#">Option 1</a></li>
+                                <li><a href="#">Option 2</a></li>
+                            </ul>
+                    </div>
+                    
+<!-- SCRIPT FOR MAPS --------------------------------------> 
+<div class="boxed"> 
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>	<!-- Google Maps API -->
+	<script>
+	var map;	// Google map object (global variable)
+	
+	// Initialize and display a google map
+	function Init()
+	{
+		// Create a Google coordinate object for where to center the map
+		var latlngDC = new google.maps.LatLng( 32.8821708,-117.2224949 );	// Coordinates of Washington, DC (area centroid)
+		
+		// Map options for how to display the Google map
+		var mapOptions = { zoom: 14, center: latlngDC  };
+		
+		// Show the Google map in the div with the attribute id 'map-canvas'.
+		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	}
+
+	</script>
+	<style>
+	/* style settings for Google map */
+	#map-canvas
+	{
+		/* this is wrong, iwll have to redo */
+        width : 500; 	/* map width */
+		height: 500px;	/* map height */
+	}
+	</style>
+</head>
+<body onload="Init()"> <!-- Call the JS method 'Init()' to display the google map when the web page is displayed (onload event) -->
+	<!-- Dislay Google map here -->
+	<div id='map-canvas' ></div>
+<!-- END SCRIPT FOR MAPS ---------------->
+                        
+                        
+                        
+                        
+                    </div>
+                    <div id="main">
+                        <h2>Quick Find</h2>
+                            <p>
+                                Insert Map Here...
+                            </p>
+                    </div>
+                    
+                <div id="sidebar">
+                    <h2>More info</h2>
+                    <p>What ever you want.</p>
+                    <ul>
+                        <li><a href="#">UCSD</a></li>
+                        <li><a href="#">UCSD INFO</a></li>
+                        ...
+                    </ul>
+                </div>
+                    
+                <div id="footer">
+                    <p>Footer</p>
+                    </div>
+                </div>
+
+                
+                
+	</body>
+</html>
