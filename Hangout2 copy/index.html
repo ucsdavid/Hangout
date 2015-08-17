@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<!-- Beginning of Code -->
+<html>
+	<head>
+		<title profile="#">Hangout</title>
+        <link rel="icon"
+              type="image/png"
+              href="images/hands.jpg"
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+        <!-- Link to CSS File -->
+		<link rel="stylesheet" href="Needed/css/main.css" />
+		
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div id="header" class="container">
+
+						<!-- Logo -->
+							<h1 id="logo"><a href="index.html">Hangout</a></h1>
+
+						<!-- Navigation Bar -->
+							<nav id="nav">
+								<ul>
+									<li>
+										<a href="#">Find a Hangout</a>
+										<ul>
+								            <!-- List 1 -->
+                                            <li>
+                                                <a href="#">Academic</a>
+                                                <ul>
+                                                    <li><a href="#">Find by Major</a></li>
+                                                    <li><a href="#">Find by Area</a></li>
+                                                 </ul>
+                                            </li>
+											
+                                            <!-- List 2 -->
+                                            <li><a href="#">Sports</a></li>
+                                            
+											<!-- List 3 -->
+                                            <li><a href="#">Recreation</a></li>
+											
+                                            <!-- List 4 -->
+                                            <li>
+												<a href="#">Nightlife</a>
+												<ul>
+													<li><a href="#">All</a></li>
+													<li><a href="#">21+</a></li>
+													<li><a href="#">18+</a></li>
+													<li><a href="#">Under 18</a></li>
+												</ul>
+											</li>
+											
+                                            <!-- List 5 -->
+                                            <li><a href="#">Miscellaneous</a></li>
+										</ul>
+									</li>
+                                    
+                                    <!-- Other Pages on the site -->
+									<li><a href="FRG.html">Find a Random Group</a></li>
+									<li class="break"><a href="CAH.html">Create a Hangout</a></li>
+									<li><a href="ABU.html">About us</a></li>
+								</ul>
+							</nav>
+
+
+					</div>
+
+					<!-- Hero -->
+						<section id="hero" class="container">
+							<header>
+								<h2>Welcome to <a href="index.html">Hangout!</a></h2>
+							</header>
+							<p>Designed to help anyone find a place to <strong>meet</strong>,
+                                                                        <strong>play</strong>, 
+                                                                    and <strong>study</strong> with.
+                                Your playground at the tip of your fingers.
+                                Don't let your Free time go to Waste.
+                            </header>
+							<!-- Button launch -->
+							<ul class="actions">
+								<li><a href="#" class="button">Get this party started</a></li>
+							</ul>
+						</section>
+
+				</div>
+
+			<!-- Features 1 -->
+				<div class="wrapper">
+					<div class="container">
+						<div class="row">
+                            
+							<section class="6u 12u(narrower) feature">
+								<div class="image-wrapper first">
+								<!--<a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" /></a> -->
+								</div>
+								<header>
+                                    
+                                    
+                                    <div class="form">
+      
+      <ul class="tab-group">
+        <!-- <li class="tab active"><a href="#signup">Sign Up</a></li>-->
+        <!-- <li class="tab"><a href="#login">Log In</a></li> -->
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h2>Submit A Hangout</h2>
+            <p></p>
+          
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                Name of Hangout<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Type of Hangout?<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Group Leader<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Get Location<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+         <!-- <button type="submit" class="button button-block"/>Submit</button> -->
+          
+          </form>
+
+        </div>
+    
+          </form>
+
+       
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+                                    
+                                    
+                                    
+                                    
+									
+								<ul class="actions">
+									<li><a href="#" class="button">Submit</a></li>
+								</ul>
+							</section>
+							<section class="6u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<!-- <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a> -->
+								</div>
+								    <!-- <header>Simple Map</header> -->
+                                <p></p>
+                                <p></p>
+                                
+                                    <font size="5.5">See what is around you at the moment</font>
+                                
+                                <p></p>
+                                <p></p>
+                              
+                                <script src="http://maps.googleapis.com/maps/api/js"></script>
+                                <script>
+                                    function initialize() {
+                                        var mapProp = {
+                                            center:new google.maps.LatLng(32.8800604,-117.2340135),
+                                            zoom:5,mapTypeId:google.maps.MapTypeId.ROADMAP
+                                        };
+                                        var map=new       
+                                    google.maps.Map(document.getElementById("googleMap"),mapProp);}
+                                    google.maps.event.addDomListener(window, 'load', initialize);
+                                </script>
+                                </head>
+                            
+                                <body>
+                                    <div id="googleMap" style="width:500px;height:380px;"></div>
+                                </body>
+  
+								<ul class="actions">
+									<li><a href="#" class="button">Go!</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+
+			<!-- Promo -->
+				<div id="promo-wrapper">
+					<section id="promo">
+						<h2>Leave us some feedback </h2>
+						<a href="#" class="button">Rate Us</a>
+					</section>
+				</div>
+
+			<!-- Features 2 -->
+				<div class="wrapper">
+					<section class="container">
+						<header class="major">
+							<h2>Find a Variety of Hangouts</h2>
+							<p>You can find anything ranging from <strong>Study Groups</strong>, <strong>Club Meetings</strong>, <strong>Local Events</strong></p>.
+						</header>
+						<div class="row features">
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper first">
+									<a href="#" class="image featured"><img src="images/soccer.jpg" alt="" /></a>
+								</div>
+								<p>Insert Description Here.</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="images/StudyGroup.jpg" alt="" /></a>
+								</div>
+								<p>Insert Description Here</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="images/party.jpg" alt="" /></a>
+								</div>
+								<p>Insert Description Here</p>
+							</section>
+						</div>
+						<ul class="actions major">
+							<li><a href="#" class="button">Yes!</a></li>
+						</ul>
+					</section>
+				</div>
+
+			<!-- Footer 
+				<div id="footer-wrapper">
+					<div id="footer" class="container">
+						<header class="major">
+							<h2>Random Stuff</p>
+						</header>
+						<div class="row">
+							<section class="6u 12u(narrower)">
+								<form method="post" action="#">
+									<div class="row 50%">
+										<div class="6u 12u(mobile)">
+											<input name="name" placeholder="Name" type="text" />
+										</div>
+										<div class="6u 12u(mobile)">
+											<input name="email" placeholder="Email" type="text" />
+										</div>
+									</div>
+									<div class="row 50%">
+										<div class="12u">
+											<textarea name="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<div class="row 50%">
+										<div class="12u">
+											<ul class="actions">
+												<li><input type="submit" value="Send Message" /></li>
+												<li><input type="reset" value="Clear form" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+							<section class="6u 12u(narrower)">
+								<div class="row 0%">
+									<ul class="divided icons 6u 12u(mobile)">
+										<li class="icon fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
+										<li class="icon fa-facebook"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
+										<li class="icon fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
+									</ul>
+									<ul class="divided icons 6u 12u(mobile)">
+										<li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
+										<li class="icon fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
+										<li class="icon fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
+									</ul>
+								</div>
+							</section>
+						</div>
+					</div>
+                    //-->
+        
+					<div id="copyright" class="container">
+						<ul class="menu">
+							<li>&copy; Hangout. All rights reserved.</li><li>Design: <a href="http://Hormiga.net">Hormiga</a></li>
+						</ul>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+    
+
+	</body>
+</html>
