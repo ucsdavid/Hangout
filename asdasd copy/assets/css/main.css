@@ -2013,7 +2013,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 		padding: 4em 0 2em 0;
 		background-image: url("images/header.svg");
 		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #4b5f73 15%, #4b5f73 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #4b5f73 15%, #4b5f73 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #4b5f73 15%, #f 55%);
 		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #4b5f73 55%);
 		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #4b5f7315%, #4b5f73 55%);
 		background-color: #4b5f73;
