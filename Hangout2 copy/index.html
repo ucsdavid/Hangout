@@ -5,24 +5,24 @@
 		<title profile="#">Hangout</title>
         <link rel="icon"
               type="image/png"
-              href="/Logo/Judy/logo_imageonly_color.png"
+              href="/Logo/Judy/logo_imageonly_bw.png"
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <!-- Firebase Script -->
-        <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 		
         <!-- Link to CSS File -->
 		<link rel="stylesheet" href="Needed/css/main.css" />
-    </head>
-	
-    <body class="homepage">
-        <div id="page-wrapper">
+		
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+
 			<!-- Header -->
 				<div id="header-wrapper">
 					<div id="header" class="container">
+
 						<!-- Logo -->
 							<h1 id="logo"><a href="index.html">Hangout</a></h1>
+
 						<!-- Navigation Bar -->
 							<nav id="nav">
 								<ul>
@@ -66,6 +66,8 @@
 									<li><a href="ABU.html">About us</a></li>
 								</ul>
 							</nav>
+
+
 					</div>
 
 					<!-- Hero -->
@@ -75,7 +77,7 @@
 							</header>
 							<p>Designed to help anyone find a place to <strong>meet</strong>,
                                                                         <strong>play</strong>, 
-                                                                    and <strong>study</strong>                                                                          <br>with.
+                                                                    and <strong>study</strong> with.
                                 Your playground at the tip of your fingers.
                                 Don't let your Free time go to Waste.
                             </header>
@@ -89,12 +91,94 @@
 
 			<!-- Features 1 -->
 				<div class="wrapper">
-					<div class="container">
-						<div class="row">
+							<section class="container" align="center">
+
+							<font size="5.5">See what is around you at the moment</font>
+                            <p></p>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw"></script>
+                                <script>
+                                    function initialize() {
+
+                                    	getCurrentPosition(function(result) {
+                                    		var mapProp = {
+	                                            center: result,
+	                                            zoom: 14,
+	                                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                                        	};
+
+                                        	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                        	addMarker(map,{
+                                        		lat: 32.867520, lng: -117.212957
+                                        	}, "Shopping!");
+                                        	addMarker(map,{
+                                        		lat: 32.880902, lng: -117.237331
+                                        	}, "Studying!");
+                                        	addMarker(map,{
+                                        		lat: 32.879636, lng: -117.235996
+                                        	}, "Studying!");
+
+
+                                    	});
+                                	}
+                                	google.maps.event.addDomListener(window, 'load', initialize);
+                                	
+                                	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+										  infoWindow.setPosition(pos);
+										  infoWindow.setContent(browserHasGeolocation ?
+										                        'Error: The Geolocation service failed.' :
+										                        'Error: Your browser doesn\'t support geolocation.');
+									}
+
+									function addMarker(map, position, title) {
+										var marker = new google.maps.Marker({
+											position: position,
+											title: title,
+											animation: google.maps.Animation.DROP,
+											map: map
+										});
+									}
+
+									function getCurrentPosition(callback){
+
+										if (navigator.geolocation) {
+										    navigator.geolocation.getCurrentPosition(
+										    function(position) {
+										      var pos = {
+										        lat: position.coords.latitude,
+										        lng: position.coords.longitude
+										      };
+										      callback(pos);
+										      // infoWindow.setPosition(pos);
+										      // infoWindow.setContent('Location found.');
+										      // map.setCenter(pos);
+										    }, function() {
+										      console.log("error");
+										      handleLocationError(true, infoWindow, map.getCenter());
+										    });
+										  } else {
+										    // Browser doesn't support Geolocation
+										    console.log("error");
+										    handleLocationError(false, infoWindow, map.getCenter());
+										  }
+									}
+
+
+                                </script>
+                                </head>
                             
-							<section class="6u 12u(narrower) feature">
+                                
+                                <div id="googleMap" style="width: 100%; height: 500px;"></div>
+                                
+  
+								<ul class="actions">
+									<li><a href="#" class="button">Go!</a></li>
+								</ul>
+							</section>
+						</div>
+				</div>
+			<section align="center">
 								<div class="image-wrapper first">
-<!--<a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" /></a> -->
+								<!--<a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" /></a> -->
 								</div>
 								<header>
                                     
@@ -145,65 +229,26 @@
           
          <!-- <button type="submit" class="button button-block"/>Submit</button> -->
           
-          </form>
+          			</form>
 
-        </div>
+        			</div>
     
-          </form>
+          			</form>
 
        
         
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
+				      </div><!-- tab-content -->
+				      
+				</div> <!-- /form -->
                                     
                                     
                                     
                                     
 									
-								<ul class="actions">
-									<li><a href="#" class="button">Submit</a></li>
-								</ul>
-							</section>
-							<section class="6u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<!-- <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a> -->
-								</div>
-								    <!-- <header>Simple Map</header> -->
-                                <p></p>
-                                <p></p>
-                                
-                                    <font size="5.5">See what is around you at the moment</font>
-                                
-                                <p></p>
-                                <p></p>
-                              
-                                <script src="http://maps.googleapis.com/maps/api/js"></script>
-                                <script>
-                                    function initialize() {
-                                        var mapProp = {
-                                            center:new google.maps.LatLng(32.8800604,-117.2340135),
-                                            zoom:5,mapTypeId:google.maps.MapTypeId.ROADMAP
-                                        };
-                                        var map=new   
-                                        
-                                    google.maps.Map(document.getElementById("googleMap"),mapProp);}
-                                    google.maps.event.addDomListener(window, 'load', initialize);
-                                </script>
-                                </head>
-                            
-                                <body>
-                                    <div id="googleMap" style="width:500px;height:380px;"></div>
-                                </body>
-  
-								<ul class="actions">
-									<li><a href="#" class="button">Go!</a></li>
-								</ul>
-							</section>
-						</div>
-					</div>
-				</div>
-
+				<ul class="actions">
+					<li><a href="#" class="button">Submit</a></li>
+				</ul>
+			</section>
 			<!-- Promo -->
 				<div id="promo-wrapper">
 					<section id="promo">
@@ -311,7 +356,6 @@
 			<script src="Needed/js/skel.min.js"></script>
 			<script src="Needed/js/util.js"></script>
 			<script src="Needed/js/main.js"></script>
-        <script>var myDataRef = new Firebase('https://f2ykg16p5um.firebaseio-demo.com/');</script>
     
 
 	</body>
