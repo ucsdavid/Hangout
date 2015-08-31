@@ -64,7 +64,7 @@
                                     <!-- Other Pages on the site -->
 									<li><a href="FRG.html">Find a Random Group</a></li>
 									<li class="break"><a href="#CAH">Create a Hangout</a></li>
-									<li><a href="ABU.html">About us</a></li>
+									<li><a href="#ABU">About us</a></li>
 								</ul>
 							</nav>
 
@@ -92,10 +92,11 @@
 
 			<!-- Features 1 -->
             <A NAME="MAP"> 
-				<div class="wrapper">
-							<section class="container" align="center">
-
-							<font size="5.5">See what is around you at the moment</font>
+				<div>
+                    <section>
+                        <header>
+&nbsp;&nbsp;
+                            <font size="10" > <center>See what is around you at the moment </font> </center>
                             <p></p>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw"></script>
                                 <script>
@@ -136,13 +137,13 @@
                                         	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
                                         	addMarker(map,{
                                         		lat: 32.867520, lng: -117.212957
-                                        	}, "Shopping!");
+                                        	}, "Shopping!", customicons.misc.icon);
                                         	addMarker(map,{
                                         		lat: 32.880902, lng: -117.237331
-                                        	}, "Studying!");
+                                        	}, "Studying!", customicons.academic.icon);
                                         	addMarker(map,{
                                         		lat: 32.879636, lng: -117.235996
-                                        	}, "Studying!");
+                                        	}, "Studying!", customicons.sports.icon);
 
 
                                     	});
@@ -156,12 +157,13 @@
 										                        'Error: Your browser doesn\'t support geolocation.');
 									}
 
-									function addMarker(map, position, title) {
+									function addMarker(map, position, title, icon) {
 										var marker = new google.maps.Marker({
 											position: position,
 											title: title,
 											animation: google.maps.Animation.DROP,
-											map: map
+											map: map,
+                                            icon: icon
 										});
 									}
 
@@ -198,11 +200,11 @@
                                 
   
 								<ul class="actions">
-									<li><a href="#" class="button">Go!</a></li>
+                                    <li><center><a href="#" class="button">Go!</a></center></li>
 								</ul>
-							</section>
-						</div>
-				</div>
+                    </section>
+                </div>
+        </A>
 			<section align="center">
 								<div class="image-wrapper first">
 								<!--<a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" /></a> -->
@@ -314,112 +316,7 @@
 					</section>
 				</div>
                 
-               
-<!-- About Us -->
-                <div class="wrapper">
-					<section class="container">
-						<header class="major">
-                            
-                            <div class="row features">
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-                                    <li class ="crop">
-									<a href="#" class="image featured"><img src="Apics/manny.jpg" alt="" /></a>
-								    </li>
-                                </div>
-								<p>Manuel Flores</p>
-							</section>
-
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper first">
-									<a href="#" class="image featured"><img src="Apics/David.jpg" alt=""  /></a>
-								</div>
-								<p>David Williams</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/Bhavik.jpg" alt="" /></a>
-								</div>
-								<p>Bhavik Upadhyaya</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/judy.jpg" alt="" /></a>
-								</div>
-								<p>Judy Samatmanakit</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/ken.jpg" alt="" /></a>
-								</div>
-								<p>Kenneth Tran</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/christian.jpg" alt="" /></a>
-								</div>
-								<p>Christian Huerta</p>
-                        </header>
-                    </section>
-                </div>
-		<div>
-			<header class="major">
-				<h2>About Us</h2>
-			</header>	
-		</div>	
-		<div class="row features">
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-                                    <li class ="crop">
-									<a href="#" class="image featured"><img src="Apics/manny.jpg" alt="" /></a>
-								    </li>
-                                </div>
-								<p>Manuel Flores</p>
-							</section>
-
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper first">
-									<a href="#" class="image featured"><img src="Apics/David.jpg" alt="" height="500" width="100" /></a>
-								</div>
-								<p>David Williams</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/Bhavik.jpg" alt="img1" /></a>
-								</div>
-								<p>Bhavik Upadhyaya</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/judy.jpg" alt="" /></a>
-								</div>
-								<p>Judy Samatmanakit</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/ken.jpg" alt="" /></a>
-								</div>
-								<p>Kenneth Tran</p>
-							</section>
-							<section class="4u 12u(narrower) feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="Apics/christian.jpg" alt="" /></a>
-								</div>
-								<p>Christian Huerta</p>
-							</section>	
-						</div>
-
-				<div>
-					<h3> <p> We are the team that created Hangout.</p> <br> 
-						
-					</h3>
-
-
-
-
-					</p>
-				</div>
-
+        
 
 			<!-- Footer -->
 				<div id="footer-wrapper">
@@ -480,161 +377,7 @@
 
 		</div>
          
-                
-                <div>
-                     <section>
-                <header>
-                
-                
-                <style type="text/css">
-      html, body, #map {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-	  #terrainCheck, #myCheck{
-		display: none;  
-	  }
-                
-                </style>
-    <link rel="stylesheet" type="text/css" href="gdropdown.css" />
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript" src="gdropdown.js"></script>
-    <script type="text/javascript">
-          
-      function initialize() {
-    	  //set up the map
-          
-          
-          
-          
-          
-        var mapDiv = document.getElementById('map');
-        var myOptions = {
-          zoom: 12,
-          center: new google.maps.LatLng(32.8800604,-117.2340135),
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          mapTypeControl: true,
-		  mapTypeControlOptions: {
-	      	style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-	       }
-        }
-        var map = new google.maps.Map(mapDiv, myOptions);
-
-        //set up custom buttons
-        var buttonOptions = {
-        		gmap: map,
-        		name: 'Sydney',
-        		position: google.maps.ControlPosition.TOP_RIGHT,
-        		action: function(){
-        			map.panTo(new google.maps.LatLng(32.8800604,-117.2340135)); 
-        		}
-        }
-        var button1 = new buttonControl(buttonOptions);
-        
-        var buttonOptions = {
-        		gmap: map,
-        		name: 'Home',
-        		position: google.maps.ControlPosition.TOP_RIGHT,
-        		action: function(){
-        			map.panTo(new google.maps.LatLng(43.136957, -70.937392)); 
-        		}
-        }
-        var button2 = new buttonControl(buttonOptions);
-        
-        //start process to set up custom drop down
-        //create the options that respond to click
-        var divOptions = {
-        		gmap: map,
-        		name: 'Option1',
-        		title: "This acts like a button or click event",
-        		id: "mapOpt",
-        		action: function(){
-        			alert('option1');
-        		}
-        }
-        var optionDiv1 = new optionDiv(divOptions);
-        
-        var divOptions2 = {
-        		gmap: map,
-        		name: 'Option2',
-        		title: "This acts like a button or click event",
-        		id: "satelliteOpt",
-        		action: function(){
-        			alert('option2');
-        		}
-        }
-       
-        var optionDiv2 = new optionDiv(divOptions2);
-        
-        //create the check box items
-        var checkOptions = {
-        		gmap: map,
-        		title: "This allows for multiple selection/toggling on/off",
-        		id: "terrainCheck",
-        		label: "On/Off",				
-        		action: function(){
-        			alert('you clicked check 1');
-        		}        		        		
-        }
-        var check1 = new checkBox(checkOptions);
-        
-        var checkOptions2 = {
-        		gmap: map,
-        		title: "This allows for multiple selection/toggling on/off",
-        		id: "myCheck",
-        		label: "my On/Off",
-        		action: function(){
-        			alert('you clicked check 2');
-        		}        		        		
-        }
-        var check2 = new checkBox(checkOptions2);
-        
-        //create the input box items
-        
-        //possibly add a separator between controls        
-        var sep = new separator();
-        
-        //put them all together to create the drop down       
-        var ddDivOptions = {
-        	items: [optionDiv1, optionDiv2, sep, check1, check2],
-        	id: "myddOptsDiv"        		
-        }
-        //alert(ddDivOptions.items[1]);
-        var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);               
-                
-        var dropDownOptions = {
-        		gmap: map,
-        		name: 'My Box',
-        		id: 'ddControl',
-        		title: 'A custom drop down select with mixed elements',
-        		position: google.maps.ControlPosition.TOP_RIGHT,
-        		dropDown: dropDownDiv 
-        }
-        
-        var dropDown1 = new dropDownControl(dropDownOptions);              
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31807274-1']);
-  _gaq.push(['_setDomainName', 'vislab-ccom.unh.edu']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-                    </script>
-                         </header>
-                    </section>
-                </div>
-                 <div id="map"></div> 
-
+              
 
 		<!-- Scripts -->
 
