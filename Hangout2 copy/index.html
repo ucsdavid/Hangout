@@ -106,7 +106,32 @@
 	                                            center: result,
 	                                            zoom: 14,
 	                                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                                               
                                         	};
+                            
+    
+
+  
+
+                                            
+                                            var customicons = {
+                                                academic: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png'
+                                                },
+                                                
+                                                sports: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_blue.png'
+                                                },
+                                                
+                                                nightlife: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_black.png'
+                                                },
+                                                
+                                                misc: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
+                                                }
+                                            };
+                                
 
                                         	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
                                         	addMarker(map,{
@@ -454,6 +479,162 @@
 				</div>
 
 		</div>
+         
+                
+                <div>
+                     <section>
+                <header>
+                
+                
+                <style type="text/css">
+      html, body, #map {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+	  #terrainCheck, #myCheck{
+		display: none;  
+	  }
+                
+                </style>
+    <link rel="stylesheet" type="text/css" href="gdropdown.css" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="gdropdown.js"></script>
+    <script type="text/javascript">
+          
+      function initialize() {
+    	  //set up the map
+          
+          
+          
+          
+          
+        var mapDiv = document.getElementById('map');
+        var myOptions = {
+          zoom: 12,
+          center: new google.maps.LatLng(32.8800604,-117.2340135),
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          mapTypeControl: true,
+		  mapTypeControlOptions: {
+	      	style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+	       }
+        }
+        var map = new google.maps.Map(mapDiv, myOptions);
+
+        //set up custom buttons
+        var buttonOptions = {
+        		gmap: map,
+        		name: 'Sydney',
+        		position: google.maps.ControlPosition.TOP_RIGHT,
+        		action: function(){
+        			map.panTo(new google.maps.LatLng(32.8800604,-117.2340135)); 
+        		}
+        }
+        var button1 = new buttonControl(buttonOptions);
+        
+        var buttonOptions = {
+        		gmap: map,
+        		name: 'Home',
+        		position: google.maps.ControlPosition.TOP_RIGHT,
+        		action: function(){
+        			map.panTo(new google.maps.LatLng(43.136957, -70.937392)); 
+        		}
+        }
+        var button2 = new buttonControl(buttonOptions);
+        
+        //start process to set up custom drop down
+        //create the options that respond to click
+        var divOptions = {
+        		gmap: map,
+        		name: 'Option1',
+        		title: "This acts like a button or click event",
+        		id: "mapOpt",
+        		action: function(){
+        			alert('option1');
+        		}
+        }
+        var optionDiv1 = new optionDiv(divOptions);
+        
+        var divOptions2 = {
+        		gmap: map,
+        		name: 'Option2',
+        		title: "This acts like a button or click event",
+        		id: "satelliteOpt",
+        		action: function(){
+        			alert('option2');
+        		}
+        }
+       
+        var optionDiv2 = new optionDiv(divOptions2);
+        
+        //create the check box items
+        var checkOptions = {
+        		gmap: map,
+        		title: "This allows for multiple selection/toggling on/off",
+        		id: "terrainCheck",
+        		label: "On/Off",				
+        		action: function(){
+        			alert('you clicked check 1');
+        		}        		        		
+        }
+        var check1 = new checkBox(checkOptions);
+        
+        var checkOptions2 = {
+        		gmap: map,
+        		title: "This allows for multiple selection/toggling on/off",
+        		id: "myCheck",
+        		label: "my On/Off",
+        		action: function(){
+        			alert('you clicked check 2');
+        		}        		        		
+        }
+        var check2 = new checkBox(checkOptions2);
+        
+        //create the input box items
+        
+        //possibly add a separator between controls        
+        var sep = new separator();
+        
+        //put them all together to create the drop down       
+        var ddDivOptions = {
+        	items: [optionDiv1, optionDiv2, sep, check1, check2],
+        	id: "myddOptsDiv"        		
+        }
+        //alert(ddDivOptions.items[1]);
+        var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);               
+                
+        var dropDownOptions = {
+        		gmap: map,
+        		name: 'My Box',
+        		id: 'ddControl',
+        		title: 'A custom drop down select with mixed elements',
+        		position: google.maps.ControlPosition.TOP_RIGHT,
+        		dropDown: dropDownDiv 
+        }
+        
+        var dropDown1 = new dropDownControl(dropDownOptions);              
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31807274-1']);
+  _gaq.push(['_setDomainName', 'vislab-ccom.unh.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+                    </script>
+                         </header>
+                    </section>
+                </div>
+                 <div id="map"></div> 
+
 
 		<!-- Scripts -->
 
@@ -463,7 +644,7 @@
 			<script src="Needed/js/util.js"></script>
 			<script src="Needed/js/main.js"></script>
             <script src="Needed/js/jquery.smoothscroll.js"></script>
-            <script src="Needed/js/bootstrap.min.js"></script>
+     
     
 
 	</body>
