@@ -100,6 +100,9 @@
                             <p></p>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw"></script>
                                 <script>
+                                	var infowindows = [];
+									var lastWindow = null;
+									var hangouts = [];
                                     function initialize() {
 
                                     	getCurrentPosition(function(result) {
@@ -135,17 +138,63 @@
                                 
 
                                         	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-                                        	addMarker(map,{
-                                        		lat: 32.867520, lng: -117.212957
-                                        	}, "Shopping!", customicons.misc.icon);
-                                        	addMarker(map,{
-                                        		lat: 32.880902, lng: -117.237331
-                                        	}, "Studying!", customicons.academic.icon);
-                                        	addMarker(map,{
-                                        		lat: 32.879636, lng: -117.235996
-                                        	}, "Studying!", customicons.sports.icon);
+
+                                        	
+
+											
+											var shoppingHangout = addHangout(
+												map,
+												{
+                                        			lat: 32.867520, lng: -117.212957
+                                        		},
+                                        		"Shopping!",
+                                        		customicons.misc.icon,
+                                        		"2:30 PM",
+                                        		"Really cool shopping hangout!!!",
+                                        		"Bobby Bobkins",
+                                        		"Tommorow"
+                                        	);
+
+											var studyingHangout = addHangout(
+												map,
+												{
+                                        			lat: 32.880902, lng: -117.237331
+                                        		},
+                                        		"Studying!",
+                                        		customicons.academic.icon,
+                                        		"9:00 PM",
+                                        		"Really cool studying hangout!!!",
+                                        		"Bobby Bobkins",
+                                        		"Today"
+                                        	);
+
+                                        	var sportsHangout = addHangout(
+												map,
+												{
+                                        			lat: 32.879636, lng: -117.235996
+                                        		},
+                                        		"Sports!",
+                                        		customicons.sports.icon,
+                                        		"6:00 PM",
+                                        		"Really cool sports hangout!!!",
+                                        		"Bobby Bobkins",
+                                        		"The day after tommorow"
+                                        	);
+
+                                        	// var shoppingMarker = addMarker(map,{
+                                        	// 	lat: 32.867520, lng: -117.212957
+                                        	// }, "Shopping!", customicons.misc.icon);
+                                        	
+                                        	// var studyingMarker = addMarker(map,{
+                                        	// 	lat: 32.880902, lng: -117.237331
+                                        	// }, "Studying!", customicons.academic.icon);
+                                        	
+                                        	// var sportsMarker = addMarker(map,{
+                                        	// 	lat: 32.879636, lng: -117.235996
+                                        	// }, "Sports!", customicons.sports.icon);
 
 
+                                        	
                                     	});
                                 	}
                                 	google.maps.event.addDomListener(window, 'load', initialize);
@@ -157,6 +206,43 @@
 										                        'Error: Your browser doesn\'t support geolocation.');
 									}
 
+									function addHangout(map, position, title, icon, time, description, name, date){
+										var marker = addMarker(map, position, title, icon);
+										var infowindow = addInfoWindow(title, description, time, name, marker, map, date);
+										hangouts.push({
+											title: title,
+											marker: marker,
+											infowindow: infowindow
+
+										});
+
+
+									}
+
+									function addInfoWindow(title, description, time, name, marker, map, date) {
+										var contentString = '<div id="content">'+
+										 '<h1 id="title" class="firstHeading">' + title + ' - ' + time + ' - ' + date + '</h1>'+
+										      '<h1 id="name" class="firstHeading">' + name + '</h1>'+
+										      '<div id="bodyContent">'+
+										      '<p>' + description + '</p>'+
+										      '</div>'+
+										      '</div>';
+
+										    var infowindow = new google.maps.InfoWindow({
+											    content: contentString
+											});
+											marker.addListener('click', function() {
+												if(lastWindow) {
+													lastWindow.close();
+												}												
+												lastWindow = infowindow;
+                                        		infowindow.open(map, marker);
+                                        	});
+
+                                        	infowindows.push(infowindow);
+                                        	return infowindow;
+									}
+
 									function addMarker(map, position, title, icon) {
 										var marker = new google.maps.Marker({
 											position: position,
@@ -165,6 +251,8 @@
 											map: map,
                                             icon: icon
 										});
+
+										return marker;
 									}
 
 									function getCurrentPosition(callback){
