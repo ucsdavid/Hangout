@@ -11,6 +11,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+        
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -2563,7 +2564,11 @@
 		/* Basic */
 
 			html, body {
-				overflow-x: hidden;
+				width: 100%;
+                height: 100%;
+                margin: 0px;
+                padding: 0px;
+                overflow-x: hidden;
 			}
 
 			body, input, textarea, select {
@@ -2957,5 +2962,226 @@
 			#footer header.major {
 				margin-bottom: 1em;
 			}
+        
+        
+
+/*--------------------*/
+/* SERVICE SECTION */
+/*--------------------*/
+
+
+#service {
+  display: inline;
+  float: left;
+  padding: 80px 0 70px;
+  width: 100%;
+}
+
+
+.service_area{
+	float: left;
+	display: inline;
+	width: 100%;
+	margin-top: 30px;
+}
+
+
+.single_service {
+	display: inline;
+	float: left;
+	width: 100%;
+	padding: 0px 35px;
+	margin-bottom: 40px;
+}
+
+
+.service_iconarea{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+
+.service_icon { 
+  border-radius: 100%;
+  color: #fff;
+  font-size: 72px;
+  height: 150px;
+  line-height: 120px;
+  padding: 15px 0;
+  width: 150px; 
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+
+.single_service>h2{
+	text-align: center;
+}
+
+
+.single_service > h2 span { 
+  border-radius: 100%;
+  color: #fff;
+  height: 150px;
+  line-height: 120px;
+  padding: 15px 0;
+  width: 150px;
+}
+
+
+.single_service .service_title{
+  margin: 20px 0 20px;
+  padding-bottom: 10px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.single_service > .service_title:after {
+  bottom: 0;
+  content: "";
+  height: 3px;
+  left: 40%;
+  position: absolute;
+  width: 100px;
+}
+
+
+/*--------------------*/
+/* Works SECTION */
+/*--------------------*/
+
+#works {
+  background-color: #4f535e;
+  display: inline;
+  float: left;
+  padding: 0 0 80px;
+  width: 100%;
+}
+
+
+.counter_section {
+  background-image: url("img/works_counterbg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: inline;
+  float: left;
+  min-height: 350px;
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+}
+
+
+.counter_area {
+  position: relative;
+  z-index: 999;
+}
+
+
+.counter {
+ padding: 20px 0;
+ border-radius: 5px;
+}
+
+
+.count-title {
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+.count-text {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.fa-2x {
+  display: table;
+  float: none;
+  margin: 0 auto;
+  font-size: 40px;
+}
+
+
+.portfolio_area {
+  background: none repeat scroll 0 0 #4f535e;
+  color: #fff;
+  display: inline;
+  float: left;
+  padding-top: 30px;
+  width: 100%;
+}
+
+
+.portfolio_area h2{
+	color: #fff;
+}
+
+
+.portfolio_gallery{
+	float: left;
+	display: inline;
+	width: 100%;
+}
+
+
+.wagwep-container ul#portfolio-filter {
+  border-bottom: medium none;
+  margin-top: 25px;
+  text-align: center;
+}
+
+
+.wagwep-container ul#portfolio-filter a {
+  background: none repeat scroll 0 center rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 10px 10px 0;
+  padding: 6px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+
+.wagwep-container ul#portfolio-filter a:hover{
+	color: #fff;	
+}
+
+
+.og-grid li a figure span {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  font-weight: normal;
+  margin: 40% 20px 20px;
+  padding: 10px 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+
+.wagwep-container ul#portfolio-filter li {
+  display: inline-block;
+  float: none;  
+}
+
+
 
 	}
