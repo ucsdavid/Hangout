@@ -25,7 +25,9 @@
 					
 
 						<!-- Navigation Bar -->
-							<nav id="nav">
+							
+                        
+                        <nav id="nav" class="main-nav">
 								<ul>
 									<li>
 										<a href="#MAP">Find a Hangout</a>
@@ -320,14 +322,15 @@
                                             <br>
                                             Name of Host:<br>
                                             <input type="text" name="host">
-                                            <br>
-                                            Get Location:<br>
-                                            <input type="text" name="location">
-                                            <br>
-                                            &nbsp;&nbsp;
-                                            <ul class="actions">
-                                                <li><a href="#" class="button">Submit</a></li>
-                                            </ul>
+                                            <br>Location
+                                            <input type="text" id="Position1" name="Position1" value="Coordinates">
+                                               &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    <br>
+    <br>
+    <br>
+    
+</form>
+                                           
 			</section>
                                        <script type="text/javascript">
     function getLocationConstant() {
@@ -336,12 +339,13 @@
         } else {
             alert("Your browser or device doesn't support Geolocation");
         }
+        
+        
     }
 
     // If we have a successful location update
     function onGeoSuccess(event) {
-        document.getElementById("Latitude").value = event.coords.latitude;
-        document.getElementById("Longitude").value = event.coords.longitude;
+        
         document.getElementById("Position1").value = event.coords.latitude + ", " + event.coords.longitude;
 
     }
@@ -352,22 +356,13 @@
     }
 </script>
 <form action="geo/ruteplanlag.php" method="get">
-    <div id="divSample" class="hideClass">Latitude:
-        <input type="text" id="Latitude" name="Latitude" value="">
-        <br>
-        <br>Longitude:
-        <input type="text" id="Longitude" name="Longitude" value="">
-        <br>
-    </div>
-    <br>Position
-    <input type="text" id="Position1" name="Position1" value="Miami">
-    <br>
-    <br>
+    <div id="divSample" class="hideClass">
     <input type="button" value="Get Location" onclick="getLocationConstant()" />
     <br>
     <br>
     <input type="submit" value="Add GPS Location" class=small>
-</form>
+    </div>
+  
                                            
                                     
                  </td>
@@ -488,7 +483,7 @@
 			<script src="Needed/js/util.js"></script>
 			<script src="Needed/js/main.js"></script>
             <script src="Needed/js/jquery.smoothscroll.js"></script>
-     
+            <script src="Needed/js/navbar.js"></script>
     
 
 	</body>
