@@ -2109,15 +2109,19 @@
 		width: 100%;
 		height: 4em;
 		line-height: 4em;
+        background-color: #000;
+        z-index: 1;
 	}
 
 		#nav > ul {
 			margin: 0;
+            z-index: 1;
 		}
 
 			#nav > ul > li {
 				display: inline-block;
-				margin-left: -2em;
+                z-index: 1;
+				
 			}
 
 				#nav > ul > li > ul {
@@ -2125,7 +2129,7 @@
 				}
 
 				#nav > ul > li > span, #nav > ul > li > a {
-					color: #fff;
+					color: #FFF;
 					text-decoration: none;
 					outline: 0;
 					border: 0;
@@ -2137,6 +2141,7 @@
 					-o-transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 					-ms-transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 					transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+                    z-index: 1;
 				}
 
 				#nav > ul > li.active > span, #nav > ul > li.active > a {
@@ -2150,8 +2155,11 @@
 				}
 
 				#nav > ul > li.break {
-					margin-left: 14em;
+                    
+					margin-left: 16em;
 				}
+
+}
 
 	.dropotron {
 		text-align: left;
@@ -2215,7 +2223,7 @@
 		position: relative;
 		color: #fff;
 		text-align: center;
-		z-index: 1;
+		z-index: 0;
 	}
 
 		#hero h2 {
@@ -2268,7 +2276,7 @@
 		padding: 1.75em 2.5em 1.75em 2.5em;
 		display: inline-block;
 		position: relative;
-		z-index: 1;
+		z-index: 0;
 	}
 
 		#promo h2 {
@@ -2326,7 +2334,7 @@
 
 	#copyright {
 		position: relative;
-		z-index: 1;
+		z-index: 0;
 		text-align: center;
 		border-top: solid 1px #d2d7dc;
 		color: #a2a7ac;
@@ -2909,6 +2917,7 @@
 
 			.image {
 				display: block;
+                z-index: 0;
 			}
 
 				.image.full, .image.left {
@@ -2916,6 +2925,7 @@
 					display: block;
 					width: 100%;
 					margin: 0 0 1.5em 0;
+                    z-index: 0;
 				}
 
 			.image-centered {
@@ -2923,6 +2933,7 @@
 				display: block;
 				width: 100%;
 				margin: 0 0 1.5em 0;
+                z-index: 0;
 			}
 
 		/* List */
