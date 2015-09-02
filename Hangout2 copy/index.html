@@ -142,10 +142,27 @@
                                 
 
                                         	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                        	var defaultBounds = new google.maps.LatLngBounds(
+											  new google.maps.LatLng(-33.8902, 151.1759),
+											  new google.maps.LatLng(-33.8474, 151.2631));
+                                        	var input = document.getElementById('searchTextField');
 
-                                        	
+											var searchBox = new google.maps.places.SearchBox(input, {
+											  bounds: defaultBounds
+											});
+											searchBox.bindTo('bounds', map);
+											google.maps.event.addListener(searchBox, 'places_changed', function() {
+											    var place = searchBox.getPlaces()[0];
+											   
+											    if (!place.geometry) return;
 
-											
+											    if (place.geometry.viewport) {
+											      map.fitBounds(place.geometry.viewport);
+											    } else {
+											      map.setCenter(place.geometry.location);
+											      map.setZoom(16);
+											    }
+											  });
 											var shoppingHangout = addHangout(
 												map,
 												{
@@ -324,7 +341,7 @@
                                             Name of Host:<br>
                                             <input type="text" name="host">
                                             <br>Location
-                                            <input type="text" id="Position1" name="Position1" value="Coordinates">
+                                            <input type="text" id="searchTextField" name="Position1" value="Coordinates">
                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
     <br>
     <br>
