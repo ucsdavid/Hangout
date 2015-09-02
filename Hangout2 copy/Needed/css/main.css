@@ -52,6 +52,39 @@
 		box-sizing: border-box;
 	}
 
+/* common column settings */
+	.colright,
+	.colmid,
+	.colleft {
+		float:left;
+		width:100%;
+		position:relative;
+	}
+	.col1,
+	.col2,
+	.col3 {
+		float:left;
+		position:relative;
+		padding:0 0 1em 0;
+		overflow:hidden;
+	}
+	/* 2 Column (double page) settings */
+	.doublepage {
+		background:#eee;		/* right column background colour */
+	}
+	.doublepage .colleft {
+		right:50%;			/* right column width */
+		background:#fff;		/* left column background colour */
+	}
+	.doublepage .col1 {
+		width:46%;			/* left column content width (column width minus left and right padding) */
+		left:52%;			/* right column width plus left column left padding */
+	}
+	.doublepage .col2 {
+		width:46%;			/* right column content width (column width minus left and right padding) */
+		left:56%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+	}
+
 /* Containers */
 
 	.container {
@@ -2070,7 +2103,7 @@
 
 	#nav {
 		text-align: center;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -2154,7 +2187,7 @@
 
 			.dropotron.level-0:before {
 				content: '';
-				position: absolute;
+				position: fixed;
 				top: -1em;
 				width: 1em;
 				height: 1em;
@@ -2740,6 +2773,8 @@
 						border-top: 0;
 						border-radius: 0 0 0.35em 0.35em;
 					}
+        
+        
 
 			#navPanel {
 				-moz-backface-visibility: hidden;
