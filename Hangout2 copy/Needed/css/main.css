@@ -22,7 +22,10 @@
 		font: inherit;
 		vertical-align: baseline;
     }
-        
+    
+    .largetextbox {
+    	width: 90px; height: 183px; border: 1px solid #999999; padding: 5px;
+    }
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
@@ -2249,12 +2252,13 @@ br1 {
 {
     min-width: 10px;
     max-width: 50px;
-   
+   	padding-right: 5px;
 }
 .b
 {
     min-width: 10px;
     max-width: 50px;
+    padding-left: 5px;
 }
 /* Hero */
 

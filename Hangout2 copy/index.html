@@ -280,7 +280,6 @@
 
 										var title = form.elements['eventname'].value;
 										var host = form.elements['host'].value;
-										var location = form.elements['location'].value;
 										var type = form.elements['type'].value;
 
 										var time = form.elements['time'].value;
@@ -321,11 +320,12 @@
 						<header class="major">
                             <font size="10" > <center>Submit A Hangout</font> </center>
                             <br>
+                            <form id="hangoutform">
                                     <!-- Start Column 1 -->
-                                  <table>
+                                  <table cellspacing="1" cellpadding="1">
                                     <tr>
                                         <td class="a">
-                                        <form id="hangoutform">
+                                        
                         <strong><font color="white" size="5">Name of Hangout:</font></strong><br>
                                             <input type="text" name="eventname">
                                             <br><strong><font color="white" size="5">Name of Host:</font></strong><br><input type="text" name="host">
@@ -335,15 +335,15 @@
                                             <br>
                                             <br>
                                             <br>
-                                            </form>
+                                            
                                         </td>
+                                        <td><br></td>
                                         <td class="b">
-                                            <form id="hangoutform">
                                         <strong> <font color="white" size="5">Choose Your Location:</font></strong><input type="text" id="searchTextField" name="location" placeholder="Click and Type Location Here!">
                                             <br>
                                                 
                                                 <strong><font color="white" size="5">Description:</font></strong><br>
-        <textarea type="text" cols="50" rows="4" name="description" placeholder="1500 Characters or Less"></textarea>
+                                                <input class="largetextbox" type="text" name="description" placeholder="1500 Characters or Less"></input>
                                             <br><strong> <font color="white" size="5">Type of Hangout:</font></strong><br>
                                             <select form="hangoutform" id="type" name="type">
                                                 <option>Academic</option>
@@ -358,10 +358,10 @@
                                             <button type="submit" onclick="submitForm(event)" class=large ><strong> <font color="white" size="4">Submit</strong></button>
                                             </div>
                                             <br>
-                                        </form>
+                                        
                                       </td>
                             </table>
-                                         
+                                 </form>        
                                     
                         </header>
                     </section>
