@@ -14,6 +14,19 @@
         
 	}
 
+    large{
+        margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+    }
+    
+    .largetextbox {
+    	width: 90px; height: 183px; border: 1px solid #999999; padding: 5px;
+    }
+
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
@@ -1701,6 +1714,10 @@
 		margin-bottom: 12em;
 	}
 
+pax{
+    height: 100px;
+}
+
 	section > :last-child,
 	article > :last-child,
 	section:last-child,
@@ -2037,10 +2054,10 @@
 		position: relative;
 		padding: 4em 0 2em 0;
 		background-image: url("images/header.svg");
-		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #4b5f73 15%, #4b5f73 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #f08c89 15%, #355E3B 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #4b5f73 15%, #355E3B 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #4b5f73 15%, #355E3B 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #800000 15%, #800000 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #800000 15%, #800000 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #800000 15%, #FFF 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #989909 40%, #D0D13C 100%);
 		background-color: #f08c89;
 		background-size: 100% 620%;
 		background-size: 128px 128px, 100% 620%, auto;
@@ -2217,6 +2234,32 @@
 				right: 1em;
 			}
 
+
+
+#hangoutform{
+background-color: #334534;
+padding: 50px;
+}
+
+br1 {
+    display: block;
+    margin-bottom: 2px;
+    font-size:2px;
+    line-height: 2px;
+}
+
+.a
+{
+    min-width: 10px;
+    max-width: 50px;
+   	padding-right: 5px;
+}
+.b
+{
+    min-width: 10px;
+    max-width: 50px;
+    padding-left: 5px;
+}
 /* Hero */
 
 	#hero {

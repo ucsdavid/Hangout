@@ -10,6 +10,8 @@
 		mobilep: '(max-width: 480px)'
 	});
 
+	
+
 	$(function() {
 
 		var	$window = $(window),
