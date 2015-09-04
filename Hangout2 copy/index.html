@@ -104,28 +104,10 @@
 &nbsp;&nbsp;
                             <font size="10" > <center>See what is around you at the moment </font> </center>
                             <p></p>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw"></script>
+                                
                                 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw&libraries=places"></script>
                                 <script>
-                                	var infowindows = [];
-									var lastWindow = null;
-									var hangouts = [];
-                                    function initialize() {
-
-                                    	getCurrentPosition(function(result) {
-                                    		var mapProp = {
-	                                            center: result,
-	                                            zoom: 14,
-	                                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                                               
-                                        	};
-                            
-    
-
-  
-
-                                            
-                                            var customicons = {
+                                var customicons = {
                                                 academic: {
                                                     icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png'
                                                 },
@@ -142,9 +124,23 @@
                                                     icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
                                                 }
                                             };
-                                
+                                	var infowindows = [];
+									var lastWindow = null;
+									var place = {};
+									var map = null;
+									var hangouts = [];
+                                    function initialize() {
 
-                                        	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                    	getCurrentPosition(function(result) {
+                                    		var mapProp = {
+	                                            center: result,
+	                                            zoom: 14,
+	                                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                                               
+                                        	};
+                            
+
+                                        	map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
                                         	var defaultBounds = new google.maps.LatLngBounds(
 											  new google.maps.LatLng(-33.8902, 151.1759),
 											  new google.maps.LatLng(-33.8474, 151.2631));
@@ -155,7 +151,7 @@
 											});
 											searchBox.bindTo('bounds', map);
 											google.maps.event.addListener(searchBox, 'places_changed', function() {
-											    var place = searchBox.getPlaces()[0];
+											    place = searchBox.getPlaces()[0];
 											   
 											    if (!place.geometry) return;
 
@@ -163,7 +159,7 @@
 											      map.fitBounds(place.geometry.viewport);
 											    } else {
 											      map.setCenter(place.geometry.location);
-											      map.setZoom(16);
+											      map.setZoom(14);
 											    }
 											  });
 											var shoppingHangout = addHangout(
@@ -231,6 +227,7 @@
 									}
 
 									function addHangout(map, position, title, icon, time, description, name, date){
+										console.log("Adding Hangout");
 										var marker = addMarker(map, position, title, icon);
 										var infowindow = addInfoWindow(title, description, time, name, marker, map, date);
 										hangouts.push({
@@ -244,6 +241,7 @@
 									}
 
 									function addInfoWindow(title, description, time, name, marker, map, date) {
+										console.log("Adding infowindow");
 										var contentString = '<div id="content">'+
 										 '<h1 id="title" class="firstHeading">' + title + ' - ' + time + ' - ' + date + '</h1>'+
 										      '<h1 id="name" class="firstHeading">' + name + '</h1>'+
@@ -268,6 +266,7 @@
 									}
 
 									function addMarker(map, position, title, icon) {
+										console.log("Adding Marker");
 										var marker = new google.maps.Marker({
 											position: position,
 											title: title,
@@ -303,6 +302,38 @@
 										  }
 									}
 
+									var submitForm = function(e) {
+										e.preventDefault();
+										var form = document.forms['hangoutform'];
+
+										var title = form.elements['eventname'].value;
+										var host = form.elements['host'].value;
+										var location = form.elements['location'].value;
+										var type = form.elements['type'].value;
+
+										var time = form.elements['time'].value;
+										var description = form.elements['description'].value;
+										var day = form.elements['day'].value;
+
+										console.log("type: ", type, " name: ", title, " host: ", host, " location: ", place);
+
+										var icon = null;
+										if(type == "Nightlife") {
+											icon = customicons.nightlife.icon;
+										} else if(type == "Academic") {
+											icon = customicons.academic.icon;
+
+										} else if(type == "Sports") {
+											icon = customicons.sports.icon;
+										} else if(type == "Misc") {
+											icon = customicons.misc.icon;
+										}
+										addHangout(map, {lat: place.geometry.location.G, lng: place.geometry.location.K}, title, icon, time, description, host, day);
+									}
+									
+
+
+
 
                                 </script>
                                 </head>
@@ -329,12 +360,20 @@
                             <table>
                                 <tr>
                                     <td><A NAME="CAH">
-                                        <form>
+                                        <form id="hangoutform">
                                             Name of Hangout:<br>
                                             <input type="text" name="eventname">
                                             <br>
+                                            Time:<br>
+                                            <input type="text" name="time">
+                                            Day:<br>
+                                            <input type="text" name="day">
+                                            <br>Location
+                                            <input type="text" id="searchTextField" name="location" placeholder="Click and Type Location Here!">
+                                            Description:<br>
+                                            <input type="text" name="description">
                                             Type of Hangout:<br>
-                                            <select>
+                                            <select form="hangoutform" id="type" name"type">
                                                 <option>Academic</option>
                                                 <option>Sports</option>
                                                 <option>Nightlife</option>
@@ -343,13 +382,11 @@
                                             <br>
                                             Name of Host:<br>
                                             <input type="text" name="host">
-                                            <br>Location
-                                            <input type="text" id="searchTextField" name="Position1" placeholder="Click and Type Location Here!">
                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                             <br>
                                             <br>
                                             <div>
-                                            <input type="submit" value="Submit" class=small>
+                                            <input type="submit" onclick="submitForm(event)" class=small >Submit</input>
                                             </div>
                                             <br>
                                         </form>
