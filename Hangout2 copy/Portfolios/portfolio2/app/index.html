@@ -1,0 +1,275 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit" />
+  <title>Welcome to Bhavik's World</title>
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#303F9F">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <link rel="import" href="/bower_components/paper-button/paper-button.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+
+      <paper-toolbar id="navheader" class="tall">
+        
+        <img class="profile middle padding" src="images/Bhavik_prof.png">
+        <div class="bottom layout vertical">
+          <span>Bhavik Upadhyaya</span>
+          <span>Mobile Software Engineer</span>
+        </div>
+    </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}">
+          <a data-route="Welcome" href="/">
+            <span>Home</span>
+          </a>
+          <a data-route="Experience" href="/Experience">
+            <span>Professional Experience</span>
+          </a>
+          <a data-route="WordPlay" href="/WordPlay">
+            Wordplay
+          </a>
+          <a data-route="Hangout" href="/Hangout">
+            Hangout
+          </a>
+
+          <a data-route="About" href="/About">
+            <span>About me</span>
+          </a>
+
+          <paper-material class="padding">
+          <span>Contact Me:</span>
+          <span>Bhavikup@gmail.com</span>
+        </paper-material>
+        </paper-menu>
+        
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel main>
+
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar" class="horizontal center-justified layout">
+          <div class="title" text-centered>Welcome to my World</div>
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content cover">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+            <section data-route="Welcome" class="horizontal center-justified layout">
+              <div id="leftpanel">
+                <a href="/WordPlay"><paper-button raised>WordPlay</paper-button></a>
+                <iframe src="//giphy.com/embed/3o85xB6FTCBEJuK6U8" width="360" height="720" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                </div>
+              <div id="vertpanel" class="vertical center-justified layout">
+              <h2 class="paper-font-display1" text-centered>Bhavik Upadhyaya</h2>
+              <h2 class="paper-font-display1" text-centered>Mobile Software Engineer</h2>
+              </div>
+              <div id="rightpanel">
+                <a href="/Hangout"><paper-button raised>Hangout</paper-button></a>
+                <iframe src="//giphy.com/embed/3oEdvch4UQNMSNyxvW" width="360" height="720" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+              </div>
+            </section>
+
+            <section data-route="WordPlay">
+              <img class="maxDimens" src="images/Wordplay.png"></img>
+              <paper-material elevation="1">
+                
+                <table class="maxSize">
+
+                  <tr>
+                    <td flex class="vertical layout start">
+                      <h2 class="paper-font-display2">WordPlay</h2>
+                      <p>WordPlay is my baby.</p>
+                      <p>It's my first native Android app!</p>
+                      <p>It is a word search game for Android that pits your word searching skills against a death clock.</p>
+                      <p>Born from a wordsearch algorithm I developed to make money from wordsearch games. I built this app so
+                       that I could have the experience of learning how to host my python wordsearch algorithm in the cloud so
+                        that other people could use it. While I was building for this use case I realized it would be really cool
+                        if I used my algorithm in a game as the service that generates a list of words for the user to find.</p>
+                      <p>I have never learned as much from any other project I have done.</p>
+                      
+                      <p>This app will be the first app that I will release onto the Google Play Store.</p>
+                    </td>
+                    <td horizontal layout>
+                      <iframe src="//giphy.com/embed/3o85xl2XYxLjRtckaQ" width="360" height="720" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    </td>
+                    <td>
+                    <img src="images/wordplay1.png" width="360" height="720"></img>
+                    </td>
+                  </tr>
+                </table>
+              </paper-material>
+            </section>
+
+            <section data-route="Hangout" class="nospacing">
+                    <img class="padding" width="1000px" height="500px" src="images/website.png"></img>
+                    <h1 class="paper-font-display2" id="nospacing">Hangout</h1>
+                    <p class="inset bigText">See what's around you now.</p>
+              <div class="horizontal end-justified layout">
+                    
+                    <img src="images/hangouthand.png"></img>
+                  </div>
+
+              <paper-material elevation="1" class="vertical center-justified layout">
+                <h2 class="paper-font-display2">Implementing functionality</h2>
+                <table>
+                  <tr class="padding">
+                    <td class="padding">
+                      <div>Adding color coded map markers:</div>
+                      <img height="400px" width="500px" src="images/mapmarkers.png"></img>
+                      <p>Green: Sports</p>
+                      <p>Blue: Academics</p>
+                      <p>Red: Misc (fun stuff)</p>
+                    </td>
+                    <td class="padding">
+                      <div>Adding infowindows for pins:</div>
+                      <img height="400px" width="500px"  src="images/mapinfowindow.png"></img>
+                      <p>I implemented infowindows through the google API</p>
+                      <p>This displays event information such as the name of the event
+                      the time, date, host, and a short and sweet description.</p>
+                    </td>
+                  </tr>
+                  <tr class="padding">
+                    <td class="padding">
+                      <div>Adding Hangout Events:</div>
+                      <img class="" height="400px" width="500px" src="images/submitform.png"></img>
+                      <p>I implemented linking the submit a hangout form to the actual google map.</p>
+                    </td>
+                    <td class="padding"> 
+                      <img height="400px" width="500px" src="images/searchlocation.png"></img>
+                      <p>I also implemented location search / autocomplete to help provide seamless user experience</p>
+                    </td>
+                  </tr>
+                  <tr class="padding">
+                    <td class="padding"> 
+                      <img height="400px" width="500px" src="images/formfilled.png"></img>
+                      <p>Here is a sample hangout event that I will add to the map through the form.</p>
+                    </td>
+                    <td class="padding"> 
+                      <img height="400px" width="500px" src="images/mapnewevent.png"></img>
+                      <p>Nice! The information about my event that I filled out went straight to the location I wanted on the map.</p>
+                    </td>
+                  </tr>
+                </table>
+                
+              </paper-material>
+              <img src="images/Portfolio_pg3.png"></img>
+            </section>
+
+            <section data-route="About">
+              <paper-material elevation="1" class="vertical center-justified layout">
+                <h2 class="paper-font-display2">About Me</h2>
+                <p>I create modern applications across various platforms using bleeding edge web-technologies and frameworks.</p>
+                <p>I enjoy researching and learning about new exciting technologies that will change how people develop
+                 applications in the future.</p>
+
+              </paper-material>
+              <paper-material elevation="1" class="vertical center-justified layout">
+                <h3 class="paper-font-display2">Professional Profile:</h3>
+                I am a graduating computer science student looking for an opportunity to apply the skills I have aquired through my education and extra-curricular projects in a position that will enable me to solve complex problems and design production level code.
+              </paper-material>
+
+              <paper-material elevation="1" class="vertical center-justified layout">
+                <h3 class="paper-font-display2">Skills:</h3>
+                I have a broad range of skills across many different languages and tools but the ones I am most comfortable with in a proffesional environment include Java, C++/C, Python, Android, XML (Android User Interfaces) and HTML.
+              </paper-material>
+
+            </section>
+
+            <section data-route="Experience">
+              <paper-material elevation="1" class="vertical center-justified layout">
+                <h2 class="paper-font-display2">Professional Experience</h2>
+
+                <p>I currently am working as a Cross-Platform Software Engineer at Aventyn.</p>
+                <p>I am building a cross-platform app that will help increase patient medication adherence.</p>
+                <p>I am using Ionic + Cordova + AngularJs Frameworks with a Parse Database for backend and Cloud functionality</p>
+                </paper-material>
+            </section>
+
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="networkFirst"
+                         precache-file="precache.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+    -->
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>
