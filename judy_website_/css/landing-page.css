@@ -187,7 +187,7 @@ width 50% }
 }
 #grey {
     line-height:30px;
-    background-color:lightgrey;
+    background-color:white;
     height:1240px;
     
     float:center;
@@ -199,7 +199,7 @@ width 50% }
 
 #white {
     line-height:30px;
-    background-color:#eeeeee;
+    background-color:white;
     height:730px;
     
     float:center;
@@ -223,6 +223,7 @@ width 50% }
     clear:both;
     text-align:center;
     padding:1px; 
+    padding-left: 300px;
 }
 #aboutbody{
     width: 100%;
