@@ -916,6 +916,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 		.row {
 			margin: -30px 0 -1px -30px;
+            z-index: 0;
 		}
 
 		.row.uniform > * {
@@ -2059,7 +2060,7 @@ a:hover.back-to-top {
 	}
 
 	.image-wrapper {
-		position: relative;
+		position: inherit;
 	}
 
 		.image-wrapper .image {

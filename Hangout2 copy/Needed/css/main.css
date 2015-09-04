@@ -1599,7 +1599,7 @@
 
 	body {
 		background: #f5f7fa;
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Helvetica', sans-serif;
 		font-weight: 300;
 		color: #52575c;
 		line-height: 1.75em;
@@ -2026,6 +2026,7 @@ pax{
 		background: #fff;
 		overflow-x: hidden;
 		padding: 6em 0 6em 0;
+        z-index: 0;
 	}
 
 	.image-wrapper {
