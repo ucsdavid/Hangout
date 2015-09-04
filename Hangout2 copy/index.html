@@ -5,7 +5,7 @@
 		<title profile="#">Hangout</title>
         <link rel="icon"
               type="image/png"
-              href="/Logo/Judy/logo_imageonly_color.png"
+              href="/Logo/Judy/logo_imageonly_color.png"/>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
@@ -29,47 +29,14 @@
                         
                         <nav id="nav" class="main-nav">
 								<ul>
-									<li>
-										<a href="#MAP" class="current">Find a Hangout</a>
-                                        &nbsp;
-										<!--<ul>
-								            <!-- List 1 
-                                            <li>
-                                                <a href="#">Academic</a>
-                                                <ul>
-                                                    <!-- <li><a href="#">Find by Major</a></li> 
-                                                    <!--<li><a href="#">Find by Area</a></li> 
-                                                 </ul>
-                                            </li> 
-											
-                                            <!-- List 2 
-                                            <li><a href="#">Sports</a></li>
-                                            
-											<!-- List 3 
-                                            <li><a href="#">Recreation</a></li>
-											
-                                            <!-- List 4 
-                                            <li>
-												<a href="#">Nightlife</a>
-												<ul>
-													<li><a href="#">All</a></li>
-													<li><a href="#">21+</a></li>
-													<li><a href="#">18+</a></li>
-													<li><a href="#">Under 18</a></li>
-												</ul>
-											</li>
-											
-                                            <!-- List 5 
-                                            <li><a href="#">Miscellaneous</a></li>
-										</ul> //-->
-									</li>
+									<li><a href="#MAP" class="current">Find a Hangout</a></li>
                                     <li><h1 id="logo" ><a href="index.html">Hangout!</a></h1></li>
                                  
                                     
                                     <!-- Other Pages on the site -->
-                                    <li><a href="#ABU" class="current">About us</a></li>
+                                    <li><a href="#CAH" class="current">Create A Hangout</a></li>
 									
-									<li class="break"><a href="#CAH" class="current">Create a Hangout</a></li>
+									<li class="break"><a href="#CAH" class="current">About us</a></li>
 									<li><a href="#f" class="current">Feedback</a></li>
 								</ul>
 							</nav>
@@ -79,6 +46,8 @@
 
 					<!-- Hero -->
 						<section id="hero" class="container">
+                            <a><center><img src="/Logo/Judy/logo_imageonly_bw.png" alt="" height="150"/></center>
+                </a> 
 							<header>
 								<h2>Welcome to <a href="index.html">Hangout!</a></h2>
 							</header>
@@ -90,7 +59,7 @@
                             </header>
 							<!-- Button launch -->
 							<ul class="actions">
-								<li><a href="#MAP" class="button">Get this party started</a></li>
+								<li><a href="#MAP" class="button">Get this party started!<br> See what's Around You!</a></li>
 							</ul>
 						</section>
 <A NAME="MAP"> 
@@ -101,9 +70,9 @@
 				<div>
                     <section>
                         <header>
-&nbsp;&nbsp;
+<br>
                             <font size="10" > <center>See what is around you at the moment </font> </center>
-                            <p></p>
+                            <br>
                                 
                                 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw&libraries=places"></script>
                                 <script>                                            
@@ -136,6 +105,7 @@
                                     		var mapProp = {
 	                                            center: result,
 	                                            zoom: 14,
+                                                scrollwheel:  false,
 	                                            mapTypeId: google.maps.MapTypeId.ROADMAP
                                                
                                         	};
@@ -330,82 +300,67 @@
 											icon = customicons.misc.icon;
 										}
 										addHangout(map, {lat: place.geometry.location.G, lng: place.geometry.location.K}, title, icon, time, description, host, day);
-									}
+               							}
 									
-
-
-
-
                                 </script>
                                 </head>
-                            
-                                
-                                <div id="googleMap" style="width: 100%; height: 500px;"></div>
-                    </section>
-            </div>
-            </A>
+    <div id="googleMap" style="width: 100%; height: 500px;"></div
+        </section>
+                        </div>
+                        </A>
         
        
-        &nbsp;
-        <section align="center">
-            <div>
-                <a class="image featured first">
-                    <img src="images/pic01.jpg" alt="" height="100"/>
-                </a> 
-            </div>
+        &nbsp; <A NAME="CAH">
+        
 				
                 
                 
                 <div class="wrapper">
 					<section class="container">
 						<header class="major">
-                            <table>
-                                <tr>
+                            <font size="10" > <center>Submit A Hangout</font> </center>
+                            <br>
                                     <!-- Start Column 1 -->
-                                    <td><A NAME="CAH">
-
+                                  <table>
+                                    <tr>
+                                        <td class="a">
                                         <form id="hangoutform">
-                                        <section class="4u 12u(narrower) feature"> 
-                                        <form>
-                                            Name of Hangout:<br>
+                        <strong><font color="white" size="5">Name of Hangout:</font></strong><br>
                                             <input type="text" name="eventname">
+                                            <br><strong><font color="white" size="5">Name of Host:</font></strong><br><input type="text" name="host">
+                                            <br><strong><font color="white" size="5">Time:</font></strong><br><input type="text" name="time" placeholder="HH:MM:SS">
+                                            <br><strong><font color="white" size="5">Date:</font></strong><br><input type="text" name="day" placeholder="MM/DD/YYYY">
+                                            
                                             <br>
-                                            Time:<br>
-                                            <input type="text" name="time">
-                                            Day:<br>
-                                            <input type="text" name="day">
-                                            <br>Location
-                                            <input type="text" id="searchTextField" name="location" placeholder="Click and Type Location Here!">
-                                            Description:<br>
-                                            <input type="text" name="description">
-                                            Type of Hangout:<br>
-                                            <select form="hangoutform" id="type" name"type">
+                                            <br>
+                                            </form>
+                                        </td>
+                                        <td class="b">
+                                            <form id="hangoutform">
+                                        <strong> <font color="white" size="5">Choose Your Location:</font></strong><input type="text" id="searchTextField" name="location" placeholder="Click and Type Location Here!">
+                                            <br>
+                                                
+                                                <strong><font color="white" size="5">Description:</font></strong><br>
+        <textarea type="text" cols="50" rows="4" name="description" placeholder="1500 Characters or Less"></textarea>
+                                            <br><strong> <font color="white" size="5">Type of Hangout:</font></strong><br>
+                                            <select form="hangoutform" id="type" name="type">
                                                 <option>Academic</option>
                                                 <option>Sports</option>
                                                 <option>Nightlife</option>
                                                 <option>Misc</option>
                                             </select>
                                             <br>
-                                            Name of Host:<br>
-                                            <input type="text" name="host">
-                                               &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                            <br>
-                                            <br>
+                                            
+                                            
                                             <div>
-                                            <input type="submit" onclick="submitForm(event)" class=small >Submit</input>
+                                            <button type="submit" onclick="submitForm(event)" class=large ><strong> <font color="white" size="5">Submit</strong></button>
                                             </div>
                                             <br>
                                         </form>
-                                        </section>   
-                                    </td>
+                                      </td>
+                            </table>
+                                         
                                     
-                                    <!-- Start Column Two -->
-                                    <td>
-                                         <section class="4u 12u(narrower) feature">
-                                        </section>
-                                    </td>
-                                </tr>
-                            </table> 
                         </header>
                     </section>
                 </div>
