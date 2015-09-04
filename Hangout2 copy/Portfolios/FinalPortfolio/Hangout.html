@@ -1,0 +1,537 @@
+<!DOCTYPE HTML>
+<!-- Beginning of Code -->
+<html>
+	<head>
+		<title profile="#">Hangout</title>
+        <link rel="icon"
+              type="image/png"
+              href="/Logo/Judy/logo_imageonly_color.png"
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+        <!-- Link to CSS File -->
+		<link rel="stylesheet" href="Needed/css/main.css" />
+     
+		
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div id="header" class="container">
+
+						<!-- Logo -->
+					   
+
+						<!-- Navigation Bar -->
+							
+                        
+                        <nav id="nav" class="main-nav">
+								<ul>
+									<li>
+										<a href="#MAP" class="current">Find a Hangout</a>
+                                        &nbsp;
+										<!--<ul>
+								            <!-- List 1 
+                                            <li>
+                                                <a href="#">Academic</a>
+                                                <ul>
+                                                    <!-- <li><a href="#">Find by Major</a></li> 
+                                                    <!--<li><a href="#">Find by Area</a></li> 
+                                                 </ul>
+                                            </li> 
+											
+                                            <!-- List 2 
+                                            <li><a href="#">Sports</a></li>
+                                            
+											<!-- List 3 
+                                            <li><a href="#">Recreation</a></li>
+											
+                                            <!-- List 4 
+                                            <li>
+												<a href="#">Nightlife</a>
+												<ul>
+													<li><a href="#">All</a></li>
+													<li><a href="#">21+</a></li>
+													<li><a href="#">18+</a></li>
+													<li><a href="#">Under 18</a></li>
+												</ul>
+											</li>
+											
+                                            <!-- List 5 
+                                            <li><a href="#">Miscellaneous</a></li>
+										</ul> //-->
+									</li>
+                                    <li><h1 id="logo" ><a href="index.html">Hangout!</a></h1></li>
+                                 
+                                    
+                                    <!-- Other Pages on the site -->
+                                    <li><a href="#ABU" class="current">About us</a></li>
+									
+									<li class="break"><a href="#CAH" class="current">Create a Hangout</a></li>
+									<li><a href="#f" class="current">Feedback</a></li>
+								</ul>
+							</nav>
+
+
+					</div>
+
+					<!-- Hero -->
+						<section id="hero" class="container">
+							<header>
+								<h2>Welcome to <a href="index.html">Hangout!</a></h2>
+							</header>
+							<p>Designed to help anyone find a place to <strong>meet</strong>,
+                                                                        <strong>play</strong>, 
+                                                                    and <strong>study</strong> with.
+                                Your playground at the tip of your fingers.
+                                Don't let your Free time go to Waste.
+                            </header>
+							<!-- Button launch -->
+							<ul class="actions">
+								<li><a href="#MAP" class="button">Get this party started</a></li>
+							</ul>
+						</section>
+
+				</div>
+
+			<!-- Features 1 -->
+            <A NAME="MAP"> 
+				<div>
+                    <section>
+                        <header>
+&nbsp;&nbsp;
+                            <font size="10" > <center>See what is around you at the moment </font> </center>
+                            <p></p>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw"></script>
+                                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw&libraries=places"></script>
+                                <script>
+                                	var infowindows = [];
+									var lastWindow = null;
+									var hangouts = [];
+                                    function initialize() {
+
+                                    	getCurrentPosition(function(result) {
+                                    		var mapProp = {
+	                                            center: result,
+	                                            zoom: 14,
+	                                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                                               
+                                        	};
+                            
+    
+
+  
+
+                                            
+                                            var customicons = {
+                                                academic: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png'
+                                                },
+                                                
+                                                sports: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_blue.png'
+                                                },
+                                                
+                                                nightlife: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_black.png'
+                                                },
+                                                
+                                                misc: {
+                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
+                                                }
+                                            };
+                                
+
+                                        	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                        	var defaultBounds = new google.maps.LatLngBounds(
+											  new google.maps.LatLng(-33.8902, 151.1759),
+											  new google.maps.LatLng(-33.8474, 151.2631));
+                                        	var input = document.getElementById('searchTextField');
+
+											var searchBox = new google.maps.places.SearchBox(input, {
+											  bounds: defaultBounds
+											});
+											searchBox.bindTo('bounds', map);
+											google.maps.event.addListener(searchBox, 'places_changed', function() {
+											    var place = searchBox.getPlaces()[0];
+											   
+											    if (!place.geometry) return;
+
+											    if (place.geometry.viewport) {
+											      map.fitBounds(place.geometry.viewport);
+											    } else {
+											      map.setCenter(place.geometry.location);
+											      map.setZoom(16);
+											    }
+											  });
+											var shoppingHangout = addHangout(
+												map,
+												{
+                                        			lat: 32.867520, lng: -117.212957
+                                        		},
+                                        		"Shopping!",
+                                        		customicons.misc.icon,
+                                        		"2:30 PM",
+                                        		"Really cool shopping hangout!!!",
+                                        		"Bobby Bobkins",
+                                        		"Tommorow"
+                                        	);
+
+											var studyingHangout = addHangout(
+												map,
+												{
+                                        			lat: 32.880902, lng: -117.237331
+                                        		},
+                                        		"Studying!",
+                                        		customicons.academic.icon,
+                                        		"9:00 PM",
+                                        		"Really cool studying hangout!!!",
+                                        		"Bobby Bobkins",
+                                        		"Today"
+                                        	);
+
+                                        	var sportsHangout = addHangout(
+												map,
+												{
+                                        			lat: 32.879636, lng: -117.235996
+                                        		},
+                                        		"Sports!",
+                                        		customicons.sports.icon,
+                                        		"6:00 PM",
+                                        		"Really cool sports hangout!!!",
+                                        		"Bobby Bobkins",
+                                        		"The day after tommorow"
+                                        	);
+
+                                        	// var shoppingMarker = addMarker(map,{
+                                        	// 	lat: 32.867520, lng: -117.212957
+                                        	// }, "Shopping!", customicons.misc.icon);
+                                        	
+                                        	// var studyingMarker = addMarker(map,{
+                                        	// 	lat: 32.880902, lng: -117.237331
+                                        	// }, "Studying!", customicons.academic.icon);
+                                        	
+                                        	// var sportsMarker = addMarker(map,{
+                                        	// 	lat: 32.879636, lng: -117.235996
+                                        	// }, "Sports!", customicons.sports.icon);
+
+
+                                        	
+                                    	});
+                                	}
+                                	google.maps.event.addDomListener(window, 'load', initialize);
+                                	
+                                	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+										  infoWindow.setPosition(pos);
+										  infoWindow.setContent(browserHasGeolocation ?
+										                        'Error: The Geolocation service failed.' :
+										                        'Error: Your browser doesn\'t support geolocation.');
+									}
+
+									function addHangout(map, position, title, icon, time, description, name, date){
+										var marker = addMarker(map, position, title, icon);
+										var infowindow = addInfoWindow(title, description, time, name, marker, map, date);
+										hangouts.push({
+											title: title,
+											marker: marker,
+											infowindow: infowindow
+
+										});
+
+
+									}
+
+									function addInfoWindow(title, description, time, name, marker, map, date) {
+										var contentString = '<div id="content">'+
+										 '<h1 id="title" class="firstHeading">' + title + ' - ' + time + ' - ' + date + '</h1>'+
+										      '<h1 id="name" class="firstHeading">' + name + '</h1>'+
+										      '<div id="bodyContent">'+
+										      '<p>' + description + '</p>'+
+										      '</div>'+
+										      '</div>';
+
+										    var infowindow = new google.maps.InfoWindow({
+											    content: contentString
+											});
+											marker.addListener('click', function() {
+												if(lastWindow) {
+													lastWindow.close();
+												}												
+												lastWindow = infowindow;
+                                        		infowindow.open(map, marker);
+                                        	});
+
+                                        	infowindows.push(infowindow);
+                                        	return infowindow;
+									}
+
+									function addMarker(map, position, title, icon) {
+										var marker = new google.maps.Marker({
+											position: position,
+											title: title,
+											animation: google.maps.Animation.DROP,
+											map: map,
+                                            icon: icon
+										});
+
+										return marker;
+									}
+
+									function getCurrentPosition(callback){
+
+										if (navigator.geolocation) {
+										    navigator.geolocation.getCurrentPosition(
+										    function(position) {
+										      var pos = {
+										        lat: position.coords.latitude,
+										        lng: position.coords.longitude
+										      };
+										      callback(pos);
+										      // infoWindow.setPosition(pos);
+										      // infoWindow.setContent('Location found.');
+										      // map.setCenter(pos);
+										    }, function() {
+										      console.log("error");
+										      handleLocationError(true, infoWindow, map.getCenter());
+										    });
+										  } else {
+										    // Browser doesn't support Geolocation
+										    console.log("error");
+										    handleLocationError(false, infoWindow, map.getCenter());
+										  }
+									}
+
+
+                                </script>
+                                </head>
+                            
+                                
+                                <div id="googleMap" style="width: 100%; height: 500px;"></div>
+                                
+  
+  
+                    </section>
+                </div>
+        </A>
+        &nbsp;&nbsp;
+			<section align="center">
+								<div class="image-wrapper first">
+								<a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" height="100"/></a> 
+								</div>
+				
+                
+                
+                <div class="wrapper">
+					<section class="container">
+						<header class="major">
+                            <table>
+                                <tr>
+                                    <td><A NAME="CAH">
+                                        <form>
+                                            Name of Hangout:<br>
+                                            <input type="text" name="eventname">
+                                            <br>
+                                            Type of Hangout:<br>
+                                            <select>
+                                                <option>Academic</option>
+                                                <option>Sports</option>
+                                                <option>Nightlife</option>
+                                                <option>Misc</option>
+                                            </select>
+                                            <br>
+                                            Name of Host:<br>
+                                            <input type="text" name="host">
+                                            <br>Location
+                                            <input type="text" id="searchTextField" name="Position1" placeholder="Click and Type Location Here!">
+                                               &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                            <br>
+                                            <br>
+                                            <div>
+                                            <input type="submit" value="Submit" class=small>
+                                            </div>
+                                            <br>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            </table> 
+                        </section>
+                    </div>
+		
+			<!-- Promo -->
+                
+                
+                
+     
+			<!-- Features 2 -->
+				<div class="wrapper">
+					<section class="container">
+						<header class="major">
+							<h2>Find a Variety of Hangouts</h2>
+							<p>You can find anything ranging from <strong>Study Groups</strong>, <strong>Club Meetings</strong>, <strong>Local Events</strong></p>.
+						</header>
+						<div class="row features">
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper first">
+									<a href="#" class="image featured"><img src="images/soccer.jpg" alt="" /></a>
+								</div>
+								<p>Insert Description Here.</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="images/StudyGroup.jpg" alt="" /></a>
+								</div>
+								<p>Insert Description Here</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="images/party.jpg" alt="" /></a>
+								</div>
+								<p>Insert Description Here</p>
+							</section>
+						</div>
+						<ul class="actions major">
+							<li><a href="#" class="button">Yes!</a></li>
+						</ul>
+					</section>
+				</div>
+     <!-- About Us -->
+
+		<div>
+			<header class="major">
+				<h2>About Us</h2>
+			</header>	
+		</div>	
+		<div class="row features">
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="Apics/manny.jpg" alt="" /></a>
+								</div>
+								<p>Manuel Flores</p>
+							</section>
+
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper first">
+									<a href="#" class="image featured"><img src="Apics/David.jpg" alt="" /></a>
+								</div>
+								<p>David Williams</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="Apics/Bhavik.jpg" alt="" /></a>
+								</div>
+								<p>Bhavik Upadhyaya</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="Apics/judy.jpg" alt="" /></a>
+								</div>
+								<p>Judy Samatmanakit</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="Apics/ken.jpg" alt="" /></a>
+								</div>
+								<p>Kenneth Tran</p>
+							</section>
+							<section class="4u 12u(narrower) feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="Apics/christian.jpg" alt="" /></a>
+								</div>
+								<p>Christian Huerta</p>
+							</section>	
+						</div>
+
+				<div>
+					<h3> <p> We are the team that created Hangout.</p> <br> 
+						<b>Our Purpose</b>: <p>To connect people with each other based on location and activity</p>
+
+						<p>We strive to create a hub for all people of any interest and age group to be able to find an activity that is local for the user. We hope that through the use of our site people will be able to connect with others of similar interest and form new connections within your own city.
+						 </p>
+					</h3>
+
+
+
+
+					</p>
+				</div>
+        
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<div id="footer" class="container">
+						<header class="major">
+							<h2>Random Stuff</p>
+						</header>
+						<div class="row">
+							<section class="6u 12u(narrower)">
+								<form method="post" action="#">
+									<div class="row 50%">
+										<div class="6u 12u(mobile)">
+											<input name="name" placeholder="Name" type="text" />
+										</div>
+										<div class="6u 12u(mobile)">
+											<input name="email" placeholder="Email" type="text" />
+										</div>
+									</div>
+									<div class="row 50%">
+										<div class="12u">
+											<textarea name="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<div class="row 50%">
+										<div class="12u">
+											<ul class="actions">
+												<li><input type="submit" value="Send Message" /></li>
+												<li><input type="reset" value="Clear form" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+							<section class="6u 12u(narrower)">
+								<div class="row 0%">
+									<ul class="divided icons 6u 12u(mobile)">
+										<li class="icon fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
+										<li class="icon fa-facebook"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
+										<li class="icon fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
+									</ul>
+									<ul class="divided icons 6u 12u(mobile)">
+										<li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
+										<li class="icon fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
+										<li class="icon fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
+									</ul>
+								</div>
+							</section>
+						</div>
+					</div>
+                    
+        
+					<div id="copyright" class="container">
+						<ul class="menu">
+							<li>&copy; Hangout. All rights reserved.</li><li>Design: <a href="http://Hormiga.net">Hormiga</a></li>
+						</ul>
+					</div>
+				</div>
+
+		</div>
+         
+              
+
+		<!-- Scripts -->
+
+			<script src="Needed/js/jquery.min.js"></script>
+			<script src="Needed/js/jquery.dropotron.min.js"></script>
+			<script src="Needed/js/skel.min.js"></script>
+			<script src="Needed/js/util.js"></script>
+			<script src="Needed/js/main.js"></script>
+            <script src="Needed/js/jquery.smoothscroll.js"></script>
+            <script src="Needed/js/navbar.js"></script>
+    
+
+	</body>
+</html>
