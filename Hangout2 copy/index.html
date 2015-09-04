@@ -15,15 +15,15 @@
 		
 	</head>
 	<body class="homepage">
-		<div id="page-wrapper">
-
-			<!-- Header -->
+        <div id="page-wrapper">
+         
+			<!-- BEGIN HEADER -->
 				<div id="header-wrapper">
 					<div id="header" class="container">
 
 						<!-- Logo -->
 					   
-
+                        
 						<!-- Navigation Bar -->
 							
                         
@@ -93,11 +93,11 @@
 								<li><a href="#MAP" class="button">Get this party started</a></li>
 							</ul>
 						</section>
-
+<A NAME="MAP"> 
 				</div>
 
 			<!-- Features 1 -->
-            <A NAME="MAP"> 
+            
 				<div>
                     <section>
                         <header>
@@ -106,24 +106,25 @@
                             <p></p>
                                 
                                 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF_zmXyCchgSuD_r1rn7BrYub4lHEmlvw&libraries=places"></script>
-                                <script>
-                                var customicons = {
-                                                academic: {
-                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png'
-                                                },
-                                                
-                                                sports: {
-                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_blue.png'
-                                                },
-                                                
-                                                nightlife: {
-                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_black.png'
-                                                },
-                                                
-                                                misc: {
-                                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
-                                                }
-                                            };
+                                <script>                                            
+                                    var customicons = {
+
+                                        academic: {
+                                            icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png'
+                                        },
+                                        
+                                        sports: {
+                                            icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_blue.png'
+                                        },
+                                        
+                                        nightlife: {
+                                            icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_black.png'
+                                        },
+                                        
+                                        misc: {
+                                            icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
+                                        }
+                                    };
                                 	var infowindows = [];
 									var lastWindow = null;
 									var place = {};
@@ -340,17 +341,18 @@
                             
                                 
                                 <div id="googleMap" style="width: 100%; height: 500px;"></div>
-                                
-  
-  
                     </section>
-                </div>
-        </A>
-        &nbsp;&nbsp;
-			<section align="center">
-								<div class="image-wrapper first">
-								<a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" height="100"/></a> 
-								</div>
+            </div>
+            </A>
+        
+       
+        &nbsp;
+        <section align="center">
+            <div>
+                <a class="image featured first">
+                    <img src="images/pic01.jpg" alt="" height="100"/>
+                </a> 
+            </div>
 				
                 
                 
@@ -359,8 +361,12 @@
 						<header class="major">
                             <table>
                                 <tr>
+                                    <!-- Start Column 1 -->
                                     <td><A NAME="CAH">
+
                                         <form id="hangoutform">
+                                        <section class="4u 12u(narrower) feature"> 
+                                        <form>
                                             Name of Hangout:<br>
                                             <input type="text" name="eventname">
                                             <br>
@@ -390,17 +396,20 @@
                                             </div>
                                             <br>
                                         </form>
+                                        </section>   
                                     </td>
+                                    
+                                    <!-- Start Column Two -->
                                     <td>
-                                        
+                                         <section class="4u 12u(narrower) feature">
+                                        </section>
                                     </td>
                                 </tr>
                             </table> 
-                        </section>
-                    </div>
-		
-			<!-- Promo -->
-                
+                        </header>
+                    </section>
+                </div>
+
                 
                 
      
@@ -408,7 +417,7 @@
 				<div class="wrapper">
 					<section class="container">
 						<header class="major">
-							<h2>Find a Variety of Hangouts</h2>
+							<h2>What is Hangout?!</h2>
 							<p>You can find anything ranging from <strong>Study Groups</strong>, <strong>Club Meetings</strong>, <strong>Local Events</strong></p>.
 						</header>
 						<div class="row features">
@@ -568,6 +577,7 @@
 			<script src="Needed/js/main.js"></script>
             <script src="Needed/js/jquery.smoothscroll.js"></script>
             <script src="Needed/js/navbar.js"></script>
+            <script src="Needed/js/custom.js"></script>
     
 
 	</body>
