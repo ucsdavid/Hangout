@@ -1670,6 +1670,56 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 		text-align: center;
 	}
 
+/* Preloader */
+#preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#000; /* change if the mask should have another color then white */
+  z-index:99999; /* makes sure it stays on top */
+}
+  #status {
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%; /* centers the loading animation horizontally one the screen */
+  top:50%; /* centers the loading animation vertically one the screen */
+  background-image:url(img/status.gif); /* path to your loading animation */
+  background-repeat:no-repeat;
+  background-position:center;
+  margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+
+/*scrol to top*/
+
+.scrollToTop {
+  bottom: 60px;
+  display: none;
+  font-size: 32px;
+  font-weight: bold;
+  height: 50px;
+  position: fixed;
+  right: 50px;
+  text-align: center;
+  text-decoration: none;
+  width: 50px;
+  z-index: 9999;
+  color: #fff;  
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+
+}
+.scrollToTop:hover, .scrollToTop:focus{
+  text-decoration: none;
+  outline: none;
+}
+    
+
 /* Sections/Article */
 
 	section, article {
@@ -1702,6 +1752,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 		header.major {
 			text-align: center;
 		}
+
+   a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 url("up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+a:hover.back-to-top {
+	background-color: #000;
+}
 
 /* Image */
 
@@ -2592,6 +2660,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     float:left;
 }
     
+
     
 }
 
