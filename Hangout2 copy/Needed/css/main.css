@@ -2234,21 +2234,27 @@ pax{
 
 
 #hangoutform{
-background-color: #989909;
-padding: 60px;
+background-color: #334534;
+padding: 50px;
 }
 
-
+br1 {
+    display: block;
+    margin-bottom: 2px;
+    font-size:2px;
+    line-height: 2px;
+}
 
 .a
 {
-   max-width: 50%;
+    min-width: 10px;
+    max-width: 50px;
    
 }
 .b
 {
-    min-width: 40px;
-    max-width: 45px;
+    min-width: 10px;
+    max-width: 50px;
 }
 /* Hero */
 
